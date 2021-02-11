@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.SecondaryViewController">
+   <children>
+      <BorderPane prefHeight="439.0" prefWidth="691.0">
+         <top>
+            <VBox BorderPane.alignment="CENTER">
+               <children>
+                  <Label prefHeight="36.0" prefWidth="636.0" text="Search By City">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets left="20.0" />
+                     </VBox.margin>
+                  </Label>
+                  <HBox prefHeight="79.0" prefWidth="691.0">
+                     <children>
+                        <VBox prefHeight="100.0" prefWidth="182.0">
+                           <children>
+                              <ComboBox fx:id="cb_city" editable="true" prefHeight="25.0" prefWidth="182.0" promptText="City, CountryCode">
+                                 <VBox.margin>
+                                    <Insets left="20.0" top="10.0" />
+                                 </VBox.margin>
+                              </ComboBox>
+                              <HBox prefHeight="75.0" prefWidth="178.0">
+                                 <children>
+                                    <Button mnemonicParsing="false" onAction="#addCity" prefWidth="60.0" text="Add">
+                                       <HBox.margin>
+                                          <Insets left="30.0" top="5.0" />
+                                       </HBox.margin>
+                                    </Button>
+                                    <Button mnemonicParsing="false" onAction="#deleteCity" prefWidth="60.0" text="Delete">
+                                       <HBox.margin>
+                                          <Insets left="10.0" top="5.0" />
+                                       </HBox.margin>
+                                    </Button>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                        <ComboBox fx:id="cb_forecast" prefWidth="150.0" promptText="Forecast Type">
+                           <HBox.margin>
+                              <Insets left="20.0" top="10.0" />
+                           </HBox.margin>
+                        </ComboBox>
+                        <VBox prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <Label text="Unit">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <RadioButton fx:id="rb_celsius" mnemonicParsing="false" selected="true" text="Celsius">
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="tg_unit" />
+                                 </toggleGroup>
+                              </RadioButton>
+                              <RadioButton fx:id="rb_fahrenheit" mnemonicParsing="false" text="Fahrenheit" toggleGroup="$tg_unit" />
+                           </children>
+                           <HBox.margin>
+                              <Insets left="20.0" />
+                           </HBox.margin>
+                        </VBox>
+                        <Button mnemonicParsing="false" onAction="#search" prefHeight="31.0" prefWidth="82.0" text="Search">
+                           <HBox.margin>
+                              <Insets left="50.0" top="15.0" />
+                           </HBox.margin>
+                        </Button>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </top>
+         <bottom>
+            <HBox prefHeight="32.0" prefWidth="691.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#goBack" prefHeight="25.0" prefWidth="70.0" text="Return">
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Label fx:id="lbl_unit" prefHeight="21.0" prefWidth="424.0">
+                     <HBox.margin>
+                        <Insets left="50.0" />
+                     </HBox.margin>
+                  </Label>
+                  <Button mnemonicParsing="false" onAction="#exit" prefHeight="25.0" prefWidth="76.0" text="Exit">
+                     <HBox.margin>
+                        <Insets left="40.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+         </bottom>
+         <center>
+            <ScrollPane prefHeight="299.0" prefWidth="653.0" BorderPane.alignment="CENTER">
+               <content>
+                  <Label fx:id="lbl_results" alignment="TOP_CENTER" contentDisplay="TOP" prefHeight="6000.0" prefWidth="677.0" />
+               </content>
+            </ScrollPane>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>
