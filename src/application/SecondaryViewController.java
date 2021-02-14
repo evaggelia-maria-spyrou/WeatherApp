@@ -42,7 +42,7 @@ public class SecondaryViewController implements Initializable{
     @FXML
     private ComboBox<String> cb_forecast;
     
-    ObservableList<String> forecastTypeList = FXCollections.observableArrayList("Current", "Hourly", "Daily"); 
+    ObservableList<String> forecastType = FXCollections.observableArrayList("Current", "Hourly", "Daily"); 
     
     // for Units
     @FXML
