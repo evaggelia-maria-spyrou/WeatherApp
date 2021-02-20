@@ -42,7 +42,7 @@ public class SecondaryViewController implements Initializable{
     @FXML
     private ComboBox<String> cb_forecast;
     
-    ObservableList<String> forecastType = FXCollections.observableArrayList("Current", "Hourly", "Daily"); 
+    ObservableList<String> forecastTypeList = FXCollections.observableArrayList("Current", "Hourly", "Daily"); 
     
     // for Units
     @FXML
@@ -142,7 +142,7 @@ public class SecondaryViewController implements Initializable{
     private void getHourlyWeatherResults(String city, String unit) throws ApiException, IOException {
 	try {
 		List<HourlyWeatherInfo> results = weatherAPIService.getHourlyWeatherForCity(city, unit);
-	/*	ObservableList<HourlyWeatherInfo> list = FXCollections.observableArrayList(results); */
+
 		lbl_results.setText(results.toString());
 	} catch (WeatherAPIException e) {
 		e.printStackTrace();
@@ -152,7 +152,7 @@ public class SecondaryViewController implements Initializable{
     private void getDailyWeatherResults(String city, String unit) throws ApiException, IOException {
 	try {
 		List<DailyWeatherInfo> results = weatherAPIService.getDailyWeatherForCity(city, unit);
-		/*ObservableList<DailyWeatherInfo> list = FXCollections.observableArrayList(results); */
+		
 		lbl_results.setText(results.toString());
 	} catch (WeatherAPIException e) {
 		e.printStackTrace();
@@ -248,9 +248,7 @@ public class SecondaryViewController implements Initializable{
     	}
     
 	
-	// exit
-	public void exit(ActionEvent event) {
-		System.exit(0);
-	}
+	
+	
 	
 }

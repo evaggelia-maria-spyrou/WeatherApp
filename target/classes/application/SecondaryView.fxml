@@ -98,11 +98,6 @@
                         <Insets left="50.0" />
                      </HBox.margin>
                   </Label>
-                  <Button mnemonicParsing="false" onAction="#exit" prefHeight="25.0" prefWidth="76.0" text="Exit">
-                     <HBox.margin>
-                        <Insets left="40.0" />
-                     </HBox.margin>
-                  </Button>
                </children>
             </HBox>
          </bottom>
